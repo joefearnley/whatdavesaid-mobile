@@ -2,8 +2,11 @@
   <ion-content class="padding">
     <h2>The David Lee Soundboard</h2>
     <ion-list>
-        <ion-item ng-repeat="file in files">
-            {{ file.name }}
+        <ion-item class="item-icon-left"
+            ng-repeat="clip in clips"
+            ng-click="play(clip)">
+            {{ clip.name }}
+            <i class="icon ion-play"></i>
         </ion-item>
     </ion-list>
   </ion-content>
