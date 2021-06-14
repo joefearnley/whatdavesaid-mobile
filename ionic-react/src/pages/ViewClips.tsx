@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Message, getMessage } from '../data/messages';
+import { Message, getMessage } from '../data/clips';
 import {
   IonBackButton,
   IonButtons,
@@ -15,9 +15,9 @@ import {
 } from '@ionic/react';
 import { personCircle } from 'ionicons/icons';
 import { useParams } from 'react-router';
-import './ViewMessage.css';
+import './ViewClips.css';
 
-function ViewMessage() {
+function ViewClips() {
   const [message, setMessage] = useState<Message>();
   const params = useParams<{ id: string }>();
 
@@ -75,4 +75,4 @@ function ViewMessage() {
   );
 }
 
-export default ViewMessage;
+export default ViewClips;

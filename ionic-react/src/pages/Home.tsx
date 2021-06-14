@@ -1,6 +1,6 @@
-import MessageListItem from '../components/MessageListItem';
+import ClipListItem from '../components/ClipListItem';
 import { useState } from 'react';
-import { Message, getMessages } from '../data/messages';
+import { Clip, getClips } from '../data/clips';
 import {
   IonContent,
   IonHeader,
@@ -16,11 +16,11 @@ import './Home.css';
 
 const Home: React.FC = () => {
 
-  const [messages, setMessages] = useState<Message[]>([]);
+  const [clips, setClips] = useState<Clip[]>([]);
 
   useIonViewWillEnter(() => {
-    const msgs = getMessages();
-    setMessages(msgs);
+    const allClips = getClips();
+    setClips(allClips);
   });
 
   const refresh = (e: CustomEvent) => {
@@ -50,7 +50,7 @@ const Home: React.FC = () => {
         </IonHeader>
 
         <IonList>
-          {messages.map(m => <MessageListItem key={m.id} message={m} />)}
+          {clips.map(c => <ClipListItem key={c.id} clip={c} />)}
         </IonList>
       </IonContent>
     </IonPage>
