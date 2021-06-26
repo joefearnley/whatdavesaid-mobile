@@ -6,11 +6,13 @@ import {
   IonHeader,
   IonList,
   IonPage,
-  IonRefresher,
-  IonRefresherContent,
   IonTitle,
   IonToolbar,
-  useIonViewWillEnter
+  useIonViewWillEnter,
+  IonImg,
+  IonGrid,
+  IonRow,
+  IonCol
 } from '@ionic/react';
 import './Home.css';
 
@@ -33,22 +35,21 @@ const Home: React.FC = () => {
     <IonPage id="home-page">
       <IonHeader>
         <IonToolbar>
-          <IonTitle>Inbox</IonTitle>
+          <IonTitle>
+            <IonGrid>
+              <IonRow className="ion-align-items-center">
+                <IonCol size="2">
+                  <IonImg src={'/assets/img/dave.jpg'} />
+                </IonCol>
+                <IonCol size="10" className="ion-text-center">
+                  What Dave Said
+                </IonCol>
+              </IonRow>
+            </IonGrid>
+          </IonTitle>
         </IonToolbar>
       </IonHeader>
       <IonContent fullscreen>
-        <IonRefresher slot="fixed" onIonRefresh={refresh}>
-          <IonRefresherContent></IonRefresherContent>
-        </IonRefresher>
-
-        <IonHeader collapse="condense">
-          <IonToolbar>
-            <IonTitle size="large">
-              Inbox
-            </IonTitle>
-          </IonToolbar>
-        </IonHeader>
-
         <IonList>
           {clips.map(c => <ClipListItem key={c.id} clip={c} />)}
         </IonList>

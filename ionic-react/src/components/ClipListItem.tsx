@@ -1,10 +1,11 @@
 import {
   IonItem,
   IonLabel,
-  IonNote
+  IonIcon
   } from '@ionic/react';
+import { play } from 'ionicons/icons'
 import { Clip } from '../data/clips';
-import './Clip.css';
+import './ClipListItem.css';
 
 interface ClipProps {
   clip: Clip;
@@ -12,10 +13,10 @@ interface ClipProps {
 
 const ClipListItem: React.FC<ClipProps> = ({ clip }) => {
   return (
-    <IonItem onClick={() => { console.log('clicked the clip....')}} detail={false}>
-      <div slot="start" className="dot dot-unread"></div>
-      <IonLabel className="ion-text-wrap">
+    <IonItem button onClick={() => { console.log('clicked the clip....')}} detail={false}>
+      <IonLabel className="ion-padding-start">
         <h2>
+          <IonIcon className="ion-padding-end" icon={play}></IonIcon>
           {clip.title}
         </h2>
       </IonLabel>
