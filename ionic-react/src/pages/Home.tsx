@@ -25,12 +25,6 @@ const Home: React.FC = () => {
     setClips(allClips);
   });
 
-  const refresh = (e: CustomEvent) => {
-    setTimeout(() => {
-      e.detail.complete();
-    }, 3000);
-  };
-
   return (
     <IonPage id="home-page">
       <IonHeader>

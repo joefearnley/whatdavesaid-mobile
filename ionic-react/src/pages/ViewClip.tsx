@@ -15,9 +15,9 @@ import {
 } from '@ionic/react';
 import { personCircle } from 'ionicons/icons';
 import { useParams } from 'react-router';
-import './ViewClips.css';
+import './ViewClip.css';
 
-function ViewClips() {
+function ViewClip() {
   const [clip, setClip] = useState<Clip>();
   const params = useParams<{ id: string }>();
 
@@ -54,4 +54,4 @@ function ViewClips() {
   );
 }
 
-export default ViewClips;
+export default ViewClip;

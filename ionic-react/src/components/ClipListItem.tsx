@@ -12,8 +12,13 @@ interface ClipProps {
 }
 
 const ClipListItem: React.FC<ClipProps> = ({ clip }) => {
+  const playClip = () => {
+      var clipAudio = new Audio(clip.path);
+      clipAudio.play();
+  };
+
   return (
-    <IonItem button onClick={() => { console.log('clicked the clip....')}} detail={false}>
+    <IonItem button onClick={playClip} detail={false}>
       <IonLabel className="ion-padding-start">
         <h2>
           <IonIcon className="ion-padding-end" icon={play}></IonIcon>
