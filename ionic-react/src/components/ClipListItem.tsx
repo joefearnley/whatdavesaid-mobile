@@ -21,12 +21,9 @@ const ClipListItem: React.FC<ClipProps> = ({ clip }) => {
   const [ clipIsPlaying, setClipIsPlaying ] = useState(false);
 
   const playClip = () => {
-    console.log('playing clip....');
-
     const soundClip = new Howl({
       src: [clip.path],
       onend: function() {
-        console.log('finished....');
         setClipIsPlaying(clipIsPlaying);
       }
     });
@@ -43,7 +40,7 @@ const ClipListItem: React.FC<ClipProps> = ({ clip }) => {
             <IonCol size="2">
               {
                 clipIsPlaying ? 
-                <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 26 26">
+                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
                   <rect className="eq-bar eq-bar--1" x="4" y="4" width="3.7" height="8"/>
                   <rect className="eq-bar eq-bar--2" x="10.2" y="4" width="3.7" height="16"/>
                   <rect className="eq-bar eq-bar--3" x="16.3" y="4" width="3.7" height="11"/>
